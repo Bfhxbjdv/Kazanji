@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+      background-image: url('/Untitled_logo_1_free-file.png'); /* Replace 'your-background-image.jpg' with your image file */I want to reduce the image width
+      background-size: contain;
+      background-position: center;
+      color: white; /* Text color for better visibility on the background */
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    input {
+      padding: 8px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      width: 80%;
+      box-sizing: border-box;
+    }
+
+    #answers {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Function to perform the calculations and print the results
+    function calculateAndPrintResults() {
+      // Taking user input for length, width, and height
+      var length = parseFloat(document.getElementById("lengthInput").value);
+      var width = parseFloat(document.getElementById("widthInput").value);
+      var height = parseFloat(document.getElementById("heightInput").value);
+
+      // Perform calculations
+      var answer1 = `${length - 3.4} * ${height}`;
+      var answer2 = `${width} * ${height}`;
+      var answer3 = `${(width - 1.8) / 2} * ${length - 1}`;
+
+      // Display results
+      document.getElementById("answers").innerHTML = `
+        <p>Answer 1: ${answer1}</p>
+        <p>Answer 2: ${answer2}</p>
+        <p>Answer 3: ${answer3}</p>
+      `;
+    }
+  </script>
+
+  <label for="lengthInput">Enter the length:</label>
+  <input type="number" id="lengthInput" placeholder="Length">
+
+  <label for="widthInput">Enter the width:</label>
+  <input type="number" id="widthInput" placeholder="Width">
+
+  <label for="heightInput">Enter the height:</label>
+  <input type="number" id="heightInput" placeholder="Height">
+
+  <button onclick="calculateAndPrintResults()">Calculate</button>
+
+  <div id="answers"></div>
+</body>
+</html>
